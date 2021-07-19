@@ -1,6 +1,6 @@
 import * as POSTCreateOrg from '../requests/POSTCreateOrganization.request';
 
-context('POST Organization', () => {
+context('POST Create Organization', () => {
     it('Adicionar nova organização', () => {
         POSTCreateOrg.addOrganization().should((response) => {
             expect(response.status).to.eq(200);

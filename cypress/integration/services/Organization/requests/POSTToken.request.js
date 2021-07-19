@@ -1,13 +1,13 @@
 /// <reference types="cypress" />
 
-const payloadAddOrg = require('../payloads/token-acesso.json');
+const payloadAddTokenAcess = require('../payloads/token-acesso.json');
 
 function gerarToken(){
     return cy.request({
         method: 'POST',
         url: 'token',
         failOnStatusCode: false,
-        body: payloadAddOrg
+        body: payloadAddTokenAcess
     })
 }
 function gerarTokenComOrgKeyInvalido(){
