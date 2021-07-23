@@ -1,8 +1,44 @@
 import * as POSTDeployContract from '../requests/POSTDeployContract.request';
 
 context('POST Deploy Contract', () => {
-    it('Adicionar novo contrato', () => {
-        POSTDeployContract.criarContrato().should((response) => {
+    it('Adicionar novo contrato Com Blockchain Zero', () => {
+        POSTDeployContract.criarContratoComBlockchainZero().should((response) => {
+            expect(response.status).to.eq(200);
+            expect(response.body.result.returnCode).to.eq("success");
+            expect(response.body.result.result.idContract).not.null;
+            expect(response.body.result.result.ABI).not.null;
+            expect(response.body.result.result.bytecode).not.null;            
+        })
+    });
+    /* it('Adicionar novo contrato Com Blockchain Um', () => {
+        POSTDeployContract.criarContratoComBlockchainUm().should((response) => {
+            expect(response.status).to.eq(200);
+            expect(response.body.result.returnCode).to.eq("success");
+            expect(response.body.result.result.idContract).not.null;
+            expect(response.body.result.result.ABI).not.null;
+            expect(response.body.result.result.bytecode).not.null;            
+        })
+    });
+    it('Adicionar novo contrato Com Blockchain Dois', () => {
+        POSTDeployContract.criarContratoComBlockchainDois().should((response) => {
+            expect(response.status).to.eq(200);
+            expect(response.body.result.returnCode).to.eq("success");
+            expect(response.body.result.result.idContract).not.null;
+            expect(response.body.result.result.ABI).not.null;
+            expect(response.body.result.result.bytecode).not.null;            
+        })
+    }); */
+    it('Adicionar novo contrato Com Blockchain Três', () => {
+        POSTDeployContract.criarContratoComBlockchainTres().should((response) => {
+            expect(response.status).to.eq(200);
+            expect(response.body.result.returnCode).to.eq("success");
+            expect(response.body.result.result.idContract).not.null;
+            expect(response.body.result.result.ABI).not.null;
+            expect(response.body.result.result.bytecode).not.null;            
+        })
+    });
+    it('Adicionar novo contrato Com Blockchain Quatro', () => {
+        POSTDeployContract.criarContratoComBlockchainQuatro().should((response) => {
             expect(response.status).to.eq(200);
             expect(response.body.result.returnCode).to.eq("success");
             expect(response.body.result.result.idContract).not.null;
