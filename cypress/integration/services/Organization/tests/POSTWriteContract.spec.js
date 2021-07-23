@@ -18,20 +18,20 @@ context('POST Write Contract', () => {
             expect(response.body.result.message).to.eq("Preencha o cabeçalho Authorization com um token válido!");
         })
     });
-    /* it('Criar um documento para um contrato com parametros vazio', () => {
+    it('Criar um documento para um contrato com parametros vazio', () => {
         PostWriteContract.criarDocumentoComParemetrosVazios().should((response) => {
             expect(response.status).to.eq(401);
             expect(response.body.result.code).to.eq("CAMPO_VAZIO");
-            expect(response.body.result.message).to.eq("Existem campos não preenchidos na requisição.");
+            expect(response.body.result.message).to.eq("Preencha todos os campos!");
             expect(response.body.result.returnCode).to.eq("failure");
         })
-    }); */
-    /* it('Criar um documento para um contrato sem parametros', () => {
+    });
+    it('Criar um documento para um contrato sem parametros', () => {
         PostWriteContract.criarDocumentoSemParemetrosVazios().should((response) => {
             expect(response.status).to.eq(401);
             expect(response.body.result.code).to.eq("CAMPO_VAZIO");
-            expect(response.body.result.message).to.eq("Existem campos não preenchidos na requisição.");
+            expect(response.body.result.message).to.eq("Preencha todos os campos!");
             expect(response.body.result.returnCode).to.eq("failure");
         })
-    }); */
+    }); 
 });

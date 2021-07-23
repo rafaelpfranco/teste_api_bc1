@@ -19,14 +19,14 @@ describe('GET Read Contract', () => {
     });
     it('Criar um modelo sem parametros insuficientes', () => {
         ReadContract.retornarDocumentoDoContratatoComParametrosVazios().should((response) => {
-            //expect(response.status).to.eq(401);
+            expect(response.status).to.eq(401);
             expect(response.body.result.code).to.eq("CAMPO_VAZIO");
             expect(response.body.result.message).to.eq("Preencha todos os campos!");
         })
     });
     it('Criar um modelo com paramentros vazios', () => {
         ReadContract.retornarDocumentoDoContratatoSemParametros().should((response) => {
-            //expect(response.status).to.eq(401);
+            expect(response.status).to.eq(401);
             expect(response.body.result.code).to.eq("CAMPO_VAZIO");
             expect(response.body.result.message).to.eq("Preencha todos os campos!");
         })

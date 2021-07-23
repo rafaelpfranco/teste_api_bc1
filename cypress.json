@@ -1,4 +1,13 @@
 {
   "baseUrl": "https://registro-documento.herokuapp.com/",
-  "projectId": "ordo9r"
+  "projectId": "ordo9r",
+  "reporter": "cypress-mochawesome-reporter",
+  "reporterOptions": {
+    "reportDir": "cypress/reports",
+    "charts": true,
+    "reportPageTitle": "Testes Automatizados API Registrar Documentos",
+    "embeddedScreenshots": true,
+    "inlineAssets": true
+  },
+  "video": false
 }

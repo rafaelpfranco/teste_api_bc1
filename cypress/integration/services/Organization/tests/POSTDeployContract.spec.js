@@ -19,7 +19,7 @@ context('POST Deploy Contract', () => {
     });
     it('Adicionar novo contrato com model vazio', () => {
         POSTDeployContract.criarContratoComModeloVazio().should((response) => {
-            //expect(response.status).to.eq(401);
+            expect(response.status).to.eq(400);
             expect(response.body.response.returnCode).to.eq("failure");
             expect(response.body.response.code).to.eq("MODEL_INEXISTENTE");
             expect(response.body.response.message).to.eq("O model requisitado é inexistente!");
@@ -28,17 +28,17 @@ context('POST Deploy Contract', () => {
     it('Adicionar novo contrato com blockchain vazio', () => {
         POSTDeployContract.criarContratoComBlockchainVazio().should((response) => {
             expect(response.status).to.eq(401);
-            expect(response.body.response.returnCode).to.eq("failure");
-            expect(response.body.response.code).to.eq("BLOCKCHAIN_INEXISTENTE");
-            expect(response.body.response.message).to.eq("Selecione uma blockchain válida!");
+            expect(response.body.result.returnCode).to.eq("failure");
+            expect(response.body.result.code).to.eq("CAMPO_VAZIO");
+            expect(response.body.result.message).to.eq("Preencha todos os campos!");
         })
     });
     it('Adicionar novo contrato sem parametros', () => {
         POSTDeployContract.criarContratoSemParemetro().should((response) => {
-            //expect(response.status).to.eq(401);
-            //expect(response.body.response.returnCode).to.eq("failure");
-            //expect(response.body.response.code).to.eq("BLOCKCHAIN_INEXISTENTE E MODEL_INEXISTENTE");
-            //expect(response.body.response.message).to.eq("Selecione uma blockchain válida! e um model existente!");
+            expect(response.status).to.eq(401);
+            expect(response.body.result.returnCode).to.eq("failure");
+            expect(response.body.result.code).to.eq("CAMPO_VAZIO");
+            expect(response.body.result.message).to.eq("Preencha todos os campos!");
         })
     });
 });

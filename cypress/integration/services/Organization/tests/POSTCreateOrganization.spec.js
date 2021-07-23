@@ -21,7 +21,7 @@ context('POST Create Organization', () => {
         POSTCreateOrg.addOrganizationComParametroVazio().should((response) => {
             expect(response.status).to.eq(401);
             expect(response.body.result.message).to.eq("Preencha todos os campos!");
-            expect(response.body.result.orgKey).to.be.null;
+            expect(response.body.result.orgKey).to.be.not.null;
             expect(response.body.result.returnCode).to.eq("failure");
             expect(response.body.result.code).to.eq("CAMPO_VAZIO");
         })
