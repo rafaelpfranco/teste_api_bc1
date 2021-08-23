@@ -6,7 +6,7 @@ context('POST Write Contract', () => {
             expect(response.status).to.eq(200);
             expect(response.body.result.returnCode).to.eq("success");
             expect(response.body.result.blockNumber).not.be.null;
-            expect(response.body.result.blockchain).to.eq("0");
+            expect(response.body.result.blockchain).to.eq("3");
             expect(response.body.result.idDocument).not.be.null;
             expect(response.body.result.txId).not.be.null;
         })

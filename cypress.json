@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://registro-documento.herokuapp.com/",
+  "baseUrl": "http://152.67.47.208:3001/",
   "projectId": "ordo9r",
   "reporter": "cypress-mochawesome-reporter",
   "reporterOptions": {
