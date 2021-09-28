@@ -36,7 +36,7 @@ Cenario: Inserção documentos multiplos modelos para um contrato HAPPPYDAY
         blockNumber
         txId.
 
-Cenario: Inserção documentos multiplos modelos para um contrato onfr modelCode não existe
+Cenario: Inserção documentos multiplos modelos para um contrato onde modelCode não existe
     Quando o usuario estiver com os pré-requisitos prontos
     Quando ele deve inserir os seguintes campos para a rota /write_contract_models:
         idContract
@@ -55,7 +55,23 @@ Cenario: Inserção documentos com falha na blockchain
 
 Cenario: Inserção documentos nulos com parametro obrigatorio attNotNull
     Quando o usuario estiver com os pré-requisitos prontos
-    Quando ele deve inserir os seguintes campos para a rota /write_contract_models:
+    Quando ele deve inserir os seguintes campos no formato: ("example": " ") para a rota /write_contract_models:
+        idContract
+        valueAttributes
+        modelCode
+    Então a API deve retornar um erro
+
+Cenario: Inserção documentos com requisição mal formatada
+    Quando o usuario estiver com os pré-requisitos prontos
+    Quando ele deve inserir os seguintes campos no formato: ("example": ) para a rota /write_contract_models:
+        idContract
+        valueAttributes
+        modelCode
+    Então a API deve retornar um erro
+
+Cenario: Inserção documentos com campo não preenchido com parametro obrigatorio attNotNull
+    Quando o usuario estiver com os pré-requisitos prontos
+    Quando ele deve inserir os seguintes campos no formato: (null)  para a rota /write_contract_models:
         idContract
         valueAttributes
         modelCode
